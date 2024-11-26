@@ -849,6 +849,12 @@ require('lazy').setup({
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
+      vim.api.nvim_set_hl(0, 'Normal', { bg = '#040404' })
+      vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#040404' })
+      vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = '#040404' })
+      vim.api.nvim_set_hl(0, 'WinSeparator', { bg = '#040404', fg = '#444444' })
+      vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#040404' })
+      vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#040404' })
     end,
   },
 
@@ -938,7 +944,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
