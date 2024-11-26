@@ -849,12 +849,12 @@ require('lazy').setup({
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
-      vim.api.nvim_set_hl(0, 'Normal', { bg = '#040404' })
-      vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#040404' })
-      vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = '#040404' })
-      vim.api.nvim_set_hl(0, 'WinSeparator', { bg = '#040404', fg = '#444444' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#040404' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#040404' })
+      vim.api.nvim_set_hl(0, 'Normal', { bg = '#080808' })
+      vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#080808' })
+      vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = '#080808' })
+      vim.api.nvim_set_hl(0, 'WinSeparator', { bg = '#080808', fg = '#444444' })
+      vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#080808' })
+      vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#080808' })
     end,
   },
 
