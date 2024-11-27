@@ -361,6 +361,9 @@ require('lazy').setup({
         -- For major updates, this must be adjusted manually.
         --version = '^1.0.0',
       },
+      {
+        'andrew-george/telescope-themes',
+      },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -423,6 +426,7 @@ require('lazy').setup({
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
       pcall(require('telescope').load_extension, 'live_grep_args')
+      pcall(require('telescope').load_extension, 'themes')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -874,15 +878,56 @@ require('lazy').setup({
       vim.cmd.colorscheme 'tokyonight-night'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-      vim.api.nvim_set_hl(0, 'Normal', { bg = '#080808' })
-      vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#080808' })
-      vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = '#080808' })
-      vim.api.nvim_set_hl(0, 'WinSeparator', { bg = '#080808', fg = '#444444' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#080808' })
-      vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#080808' })
-      vim.api.nvim_set_hl(0, 'SignColumn', { bg = '#080808' })
+      --vim.cmd.hi 'Comment gui=none'
+      --vim.api.nvim_set_hl(0, 'Normal', { bg = '#080808' })
+      --vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#080808' })
+      --vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = '#080808' })
+      --vim.api.nvim_set_hl(0, 'WinSeparator', { bg = '#080808', fg = '#444444' })
+      --vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = '#080808' })
+      --vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = '#080808' })
+      --vim.api.nvim_set_hl(0, 'SignColumn', { bg = '#080808' })
     end,
+  },
+
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    opts = {
+      no_italic = true,
+      term_colors = true,
+      transparent_background = false,
+      styles = {
+        comments = {},
+        conditionals = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+      },
+      color_overrides = {
+        mocha = {
+          base = '#000000',
+          mantle = '#000000',
+          crust = '#000000',
+        },
+      },
+      integrations = {
+        telescope = {
+          enabled = true,
+          style = 'nvchad',
+        },
+        dropbar = {
+          enabled = true,
+          color_mode = true,
+        },
+      },
+    },
   },
 
   -- Highlight todo, notes, etc in comments
