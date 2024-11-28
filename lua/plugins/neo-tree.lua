@@ -1,3 +1,5 @@
+vim.cmd [[ let g:neo_tree_remove_legacy_commands = 1 ]]
+
 return {
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
@@ -7,24 +9,23 @@ return {
     'MunifTanjim/nui.nvim',
     --'3rd/image.nvim', -- images preview support
   },
-  cmd = 'Neotree',
-  keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-  },
-  config = function(_, opts)
+  config = function()
     require('neo-tree').setup {
       filesystem = {
         window = {
           follow_current_file = {
-            enabled = true, -- This will find and focus the file in the active buffer every time
-            --               -- the current file is changed while the tree is open.
-            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+            enabled = true,
+            leave_dirs_open = false,
           },
           mappings = {
             ['\\'] = 'close_window',
           },
+          hijack_netrw_behavior = 'open_default',
+          use_libuv_file_watcher = true,
         },
       },
     }
+
+    vim.keymap.set('n', '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
   end,
 }
