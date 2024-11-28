@@ -1,4 +1,6 @@
 return {
   'github/copilot.vim',
-  event = 'InsertEnter', -- Optional: Load on demand for performance
+  config = function()
+    require('local-highlight').setup {}
+  end,
 }
