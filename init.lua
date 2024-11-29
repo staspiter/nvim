@@ -130,6 +130,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+vim.o.completeopt = 'menuone,noselect,preview'
+
 require('lazy').setup {
   'tpope/vim-sleuth',
 
