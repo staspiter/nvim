@@ -211,6 +211,20 @@ return {
       end,
     }
 
+    lspconfig.gopls.setup {
+      cmd = { 'gopls' }, -- Path to the `gopls` binary
+      filetypes = { 'go', 'gomod' }, -- File types for Go
+      root_dir = lspconfig.util.root_pattern('go.mod', '.git'), -- Detect project root
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true, -- Enable analysis for unused params
+          },
+          staticcheck = true, -- Enable static analysis
+        },
+      },
+    }
+
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run
