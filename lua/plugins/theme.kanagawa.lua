@@ -22,6 +22,7 @@ return {
           all = {
             ui = {
               bg_gutter = 'none',
+              bg = '#000000',
               whitespace = '#282727',
             },
           },
@@ -45,6 +46,7 @@ return {
       highlight CursorLineNr guifg=#282727 guibg=NONE
       highlight SignColumn guifg=#282727 guibg=NONE
       highlight CursorLine guibg=#1f1e1e guifg=NONE
+      highlight NeoTreeTitleBar guifg=#ffffff guibg=NONE
     ]]
   end,
 }
