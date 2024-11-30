@@ -22,6 +22,7 @@ return {
           all = {
             ui = {
               bg_gutter = 'none',
+              whitespace = '#282727',
             },
           },
         },
