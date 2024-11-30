@@ -1,5 +1,6 @@
 return {
   'tzachar/local-highlight.nvim',
+  enabled = false,
   config = function()
     require('local-highlight').setup {
       disable_file_types = { 'tex' },
