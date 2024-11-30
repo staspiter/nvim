@@ -138,6 +138,15 @@ require('lazy').setup {
   { import = 'plugins' },
 }
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
+  callback = function()
+    vim.bo.tabstop = 4 -- Number of spaces a <Tab> counts for
+    vim.bo.shiftwidth = 4 -- Number of spaces to use for autoindent
+    vim.bo.expandtab = false -- Use tabs instead of spaces
+  end,
+})
+
 --vim.cmd 'colorscheme kanagawa'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
