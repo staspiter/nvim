@@ -78,6 +78,9 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Re-select last pasted text' })
+vim.keymap.set('n', '<C-Down>', '5j', { desc = 'Move 5 lines down', silent = true })
+vim.keymap.set('n', '<C-Up>', '5k', { desc = 'Move 5 lines up', silent = true })
+vim.keymap.set('i', '§', '<Esc>', { desc = 'iPad Esc', silent = true })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
