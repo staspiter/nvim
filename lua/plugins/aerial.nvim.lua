@@ -16,6 +16,6 @@ return {
   config = function(_, opts)
     require('aerial').setup(opts)
     -- Set a keymap to toggle aerial
-    vim.keymap.set('n', '<leader>a', ':AerialToggle!<CR>', { desc = 'Toggle Aerial' })
+    vim.keymap.set('n', '<leader>a', ':AerialOpen<CR>', { desc = 'Toggle Aerial' })
   end,
 }

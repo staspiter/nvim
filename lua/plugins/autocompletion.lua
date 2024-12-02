@@ -111,6 +111,54 @@ return { -- Autocompletion
         { name = 'luasnip' },
         { name = 'path' },
       },
+      formatting = {
+        fields = { 'kind', 'abbr', 'menu' },
+        format = function(entry, vim_item)
+          local kind_icons = {
+            Text = '',
+            Method = '󰆧',
+            Function = '󰊕',
+            Constructor = '',
+            Field = '󰇽',
+            Variable = '󰂡',
+            Class = '󰠱',
+            Interface = '',
+            Module = '',
+            Property = '󰜢',
+            Unit = '',
+            Value = '󰎠',
+            Enum = '',
+            Keyword = '󰌋',
+            Snippet = '',
+            Color = '󰏘',
+            File = '󰈙',
+            Reference = '',
+            Folder = '󰉋',
+            EnumMember = '',
+            Constant = '󰏿',
+            Struct = '',
+            Event = '',
+            Operator = '󰆕',
+            TypeParameter = '󰅲',
+          }
+
+          vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
+
+          return vim_item
+        end,
+      },
     }
+
+    vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
+    vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#569CD6' })
+    vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#9CDCFE' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#C586C0' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
+    vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
   end,
 }

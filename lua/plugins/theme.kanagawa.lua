@@ -47,6 +47,7 @@ return {
       highlight SignColumn guifg=#282727 guibg=NONE
       highlight CursorLine guibg=#1f1e1e guifg=NONE
       highlight NeoTreeTitleBar guifg=#ffffff guibg=NONE
+      highlight! NormalFloat guibg=#0e1b30
     ]]
   end,
 }
